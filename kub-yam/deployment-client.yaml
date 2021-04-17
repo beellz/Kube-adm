@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-pod-deploy
+  labels:
+    name: client-pod-deploy
+    app: React-app
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      name: client-pod
+      app: React-app
+
+  template:
+    metadata:
+      name: client-pod
+      labels:
+        name: client-pod
+        app: React-app
+    spec:
+      containers: 
+        - name: client-app
+          image: beellzrocks/multi-docker_client
+          ports:
+            - containerPort: 80   

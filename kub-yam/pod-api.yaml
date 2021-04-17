@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: api-pod
+  labels:
+    name: api-pod
+    app: React-app
+spec:
+  containers: 
+    - name: api-app
+      image: beellzrocks/multi-docker-api
+      ports:
+      - containerPort: 5000
